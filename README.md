@@ -1,5 +1,5 @@
 # OOPS-in-python
-classes and obejcts - [here]([#OOPS/classes and objects.ipynb](https://github.com/harish-AK/OOPS-in-python/blob/main/OOPS/classes%20and%20objects.ipynb))
+classes and obejcts - [here](OOPS/classes and objects.ipynb](https://github.com/harish-AK/OOPS-in-python/blob/main/OOPS/classes%20and%20objects.ipynb)
 exercises - [here](https://github.com/harish-AK/OOPS-in-python/blob/main/OOPS/classes%20and%20objects.ipynb)
 
 Cannot access a variable that defined in one method in another method without using self (class instance).
