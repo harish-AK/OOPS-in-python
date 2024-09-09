@@ -14,24 +14,24 @@ class is an user defined data structure which have its own methods and functions
 
 If a class is created means every methods should have the parameter self which is used to access class attributes. to access class elements we need to pass self.attribute in the method.
 
-`class dog:
-``	a = "hello"
-``	def display(self):
-``		print(self.a)
-`d = dog()
-`d.display()
-**output** is "hello"
+	class dog:
+		a = "hello"
+		def display(self):
+			print(self.a)
+	d = dog()
+	d.display()
+	**output** is "hello"
 
 in python class methods will form like **func(myclass,arg1)** even though the method has only one parameter like **func(arg1)**.
-
-`class dog:
-``	def __ init __ (self,name):
-``		self.name = name
-``	def display(self):
-``		 print(self.name)
-`d = dog()
-`d.display("ak")
-
+	
+	class dog:
+		def __ init __ (self,name):
+			self.name = name
+		def display(self):
+			 print(self.name)
+	d = dog()
+	d.display("ak")
+	
 output is "ak".
 
 # Constructor
@@ -60,23 +60,23 @@ Encapsulation prevents the unwanted usage of class attributes. using encapsulati
 
 Even if we change the value of protected class member in child class wont change the value in parent class.
 
-class parent:
-	def __ init __ (self):
-		self. _ a = 10
-
-class derived(parent):
-	parent(). __ init __ (self)
-	print(self. _ a)
-	self. _ a = 20
-	print(self. _ a)
+	class parent:
+		def __ init __ (self):
+			self. _ a = 10
 	
-p = parent()
-d = derived()
-
-d. _ a # output is 10
-d. _ a # output is 20, after update the value. 
-
-p. _ a # output is 10, parent class attribute wont change even if it updated in child class.
+	class derived(parent):
+		parent(). __ init __ (self)
+		print(self. _ a)
+		self. _ a = 20
+		print(self. _ a)
+		
+	p = parent()
+	d = derived()
+	
+	d. _ a # output is 10
+	d. _ a # output is 20, after update the value. 
+	
+	p. _ a # output is 10, parent class attribute wont change even if it updated in child class.
 
 protected member: _ A (single underscore)
 private member:  __ A (double underscore)
@@ -88,15 +88,15 @@ Basic definition is showing essential details and hiding the implementation is k
 Abstract class considered as blue print for other classes used to ensure that certain methods are used by subclasses. By default python doesn't support abstraction. ABC (Abstract base class) module will be used for abstraction, abstract method will be used as decorator. 
 **@abstractmethod**.
 
-from abc import ABC, abstractmethod
-class Animal(ABC):
-	@abstractmethod
-	def  move(self):
-		pass
-class Dog(Animal):
-	def move(self):
-		return "Hello world"
-can't access method move in Animal class because it defined as @abstractmethod.
+	from abc import ABC, abstractmethod
+	class Animal(ABC):
+		@abstractmethod
+		def  move(self):
+			pass
+	class Dog(Animal):
+		def move(self):
+			return "Hello world"
+	can't access method move in Animal class because it defined as @abstractmethod.
 
 
 
@@ -107,14 +107,14 @@ A class will be created and attributes will be assigned (this class is called pa
 Another class will be created and the parent class will be passed as parameter in this class.
 This class is called child class.
 
-Class parent:
-		 constructor:
-		 method creation
-
-Class child(parent):
-		 constructor:
-		 super(). __ init __ (parent class variables) # no need to pass self while calling super class
-		 method creation
+	Class parent:
+			 constructor:
+			 method creation
+	
+	Class child(parent):
+			 constructor:
+			 super(). __ init __ (parent class variables) # no need to pass self while calling super class
+			 method creation
 ### Types:
 
 Unlike java python can do multiple inheritance.
@@ -136,38 +136,38 @@ Hierarchical inheritance - a class will be inherited by more than one child clas
 Hybrid inheritance - involves more than one form of inheritance.
 
 In heritance a parent attribute can be made to private by adding double underscore( _ ).
-class A:
-    def __ init __ (self):
-         self.a = 10
-         self. __ b = 20
-class B(A):
-	def  __ init __ (self):
-		super() . __ init __ (self)
-bb = B()
-b.a
-bb. __ b	
+	class A:
+	    def __ init __ (self):
+	         self.a = 10
+	         self. __ b = 20
+	class B(A):
+		def  __ init __ (self):
+			super() . __ init __ (self)
+	bb = B()
+	b.a
+	bb. __ b	
 # Polymorphism
 
 Same function being used for different use cases, differ by number of arguments and data types.
 one class method name can be used for another class without inherit anything, (only the name of method). but we need to create separate objects for each class in order to access the methods. By inheriting we can modify the parent class method in child class.
 
-class Animal:
-    def speak(self):
-        raise NotImplementedError("Subclass must implement this method")
-
-class Dog(Animal):
-    def speak(self):
-        return "Woof!"
-
-class Cat(Animal):
-    def speak(self):
-        return "Meow!"
-d = [Dog(), Cat()]
-for i in d:
-	print(i.speak())
-
-Output - Woof !
-		Meow!
+	class Animal:
+	    def speak(self):
+	        raise NotImplementedError("Subclass must implement this method")
+	
+	class Dog(Animal):
+	    def speak(self):
+	        return "Woof!"
+	
+	class Cat(Animal):
+	    def speak(self):
+	        return "Meow!"
+	d = [Dog(), Cat()]
+	for i in d:
+		print(i.speak())
+	
+	Output - Woof !
+		 Meow!
 
 # Method overloading
 
@@ -176,26 +176,26 @@ Two or more methods having same name but different parameters and data types. On
 To overcome method overloading declare parameters to none.
 Efficient one - using multipledispatch
 
-from multipledispatch import dispatch
-@dispatch(int, int)
-def product(a,b):
-	print(a+b)
-
-@dispatch(int, int, int)
-def product(a, b, c):
-	print(a+b+c)
+	from multipledispatch import dispatch
+	@dispatch(int, int)
+	def product(a,b):
+		print(a+b)
+	
+	@dispatch(int, int, int)
+	def product(a, b, c):
+		print(a+b+c)
 
 # Method overriding
 
 When a child class overrides a method of parent class is known as method overriding.
-class parent:
-	def method(self):
-		return "parent"
-class child(parent):
-	def method(self):
-		return "Child"
-c = child()
-c.method()
-output - Child
+	class parent:
+		def method(self):
+			return "parent"
+	class child(parent):
+		def method(self):
+			return "Child"
+	c = child()
+	c.method()
+	output - Child
 
 
