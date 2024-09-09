@@ -188,6 +188,7 @@ Efficient one - using multipledispatch
 # Method overriding
 
 When a child class overrides a method of parent class is known as method overriding.
+
 	class parent:
 		def method(self):
 			return "parent"
